@@ -4,7 +4,7 @@ docker-gc:
     - FORCE_IMAGE_REMOVAL=${FORCE_IMAGE_REMOVAL}
     - FORCE_CONTAINER_REMOVAL=${FORCE_CONTAINER_REMOVAL}
     - DRY_RUN=${DRY_RUN}
-  image: chessracer/docker-gc-crond
+  image: chessracer/docker-docker-gc-crond
   privileged: true
   volumes:
   - /var/run/docker.sock:/var/run/docker.sock
