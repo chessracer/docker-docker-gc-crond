@@ -1,9 +1,9 @@
-FROM eeacms/docker-gc
+FROM spotify/docker-gc
 
-MAINTAINER Chris Fordham <chris@fordham-nagy.id.au>
+MAINTAINER Jonathan Baker <chessracer@gmail.com>
 
 COPY root.cron /var/spool/cron/crontabs/root
 
 VOLUME /var/spool/cron
 
-CMD crond -l 2 -f
+CMD ["crond", "-f", "-d", "8"]

@@ -1,37 +1,39 @@
-# docker-docker-gc-crond
+# docker-gc-crond plus docker-compose and rancher itegration
 
-Run docker-gc regularly under a cron job within a Docker container
+Run docker-gc regularly under a cron job within a Docker container, setup for docker-compose and rancher
 
 ## Usage
 
 ### Build
 
-    $ docker build -t docker-gc-crond .
+    $ docker build -t chessracer/docker-gc-crond .
 
 ### Run
 
 Inherits the usage from https://github.com/eea/docker-gc/blob/master/README.md plus:
 
-Typically:
+Docker-compose functionality:
 
-    $ docker run -itd -v /var/run/docker.sock:/var/run/docker.sock docker-gc-crond
+    $ docker-compose up -d 
 
-By default `docker-gc` will run every 30 minutes.
+
+By default `docker-gc` will run every 30 minutes. Modify root.cron as needed
 
 #### Runtime Environment Variables
 
-There should be a reasonable amount of flexibility using the available variables. If not please raise an issue so your use case can be covered!
+Set the following to '1' to enable them
 
-- `FOO` - bar
+- FORCE_COINTAINER_REMOVAL
+- FORCE_IMAGE_REMOVAL
+- DRY_RUN
 
-### Tag and Push
+### Tag and Push 
 
-    $ docker tag -f docker-gc-crond flaccid/docker-gc-crond
-    $ docker push flaccid/docker-gc-crond
+Automated through dockerhub integration
 
 License and Authors
 -------------------
-- Author: Chris Fordham (<chris@fordham-nagy.id.au>)
+- Author: Jonathan Baker (<chessracer@gmail.com>)
 
 ```text
 Copyright 2016, Chris Fordham

@@ -1,8 +1,10 @@
 docker-gc:
   environment:
-    EXCLUDE_CONTAINERS: data
-    EXCLUDE_IMAGES: busybox alpine
-  image: flaccid/docker-gc-crond
+    - EXCLUDE_CONTAINERS_FROM_GC=./exclude_list
+    - FORCE_IMAGE_REMOVAL=${FORCE_IMAGE_REMOVAL}
+    - FORCE_CONTAINER_REMOVAL=${FORCE_CONTAINER_REMOVAL}
+    - DRY_RUN=${DRY_RUN}
+  image: chessracer/docker-gc-crond
   privileged: true
   volumes:
   - /var/run/docker.sock:/var/run/docker.sock
