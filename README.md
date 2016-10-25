@@ -36,7 +36,7 @@ License and Authors
 - Author: Jonathan Baker (<chessracer@gmail.com>)
 
 ```text
-Copyright 2016, Chris Fordham
+Copyright 2016, Jonathan Baker 
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
