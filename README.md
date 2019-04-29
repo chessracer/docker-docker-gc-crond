@@ -1,5 +1,7 @@
 # docker-gc-crond plus docker-compose and rancher itegration
 
+# Maintaner: chessracer@gmail.com
+
 Run docker-gc regularly under a cron job within a Docker container, setup for docker-compose and rancher
 
 ## Usage
